@@ -35,15 +35,53 @@ public void tester()
     }
   }
 }
+public String noSpaces(String sWord){
+  String idk = new String();
+  for(int i = 0; i < sWord.length(); i++)
+  {
+  if(!sWord.substring(i,i+1).equals(" "))
+  {
+  idk =idk + sWord.substring(i,i+1);
+  }
+  }
+  return idk ;
+}
+
+public String onlyLetters(String sString){
+  String result= new String();
+  for (int i=0; i<sString.length(); i++)
+  {
+   
+if (Character.isLetter(sString.charAt(i)))
+result = result + sString.substring(i,i+1);
+  }
+  return result;
+}
+
+public String noCapitals(String sWord){
+  return sWord.toLowerCase();
+}
+
 public boolean palindrome(String word)
 {
-  //your code here
+  String word1= new String();
+  word1=noSpaces(word);
+  word1=noCapitals(word1);
+  word1=onlyLetters(word1);
+  
+  if (word1.equals(reverse(word1)))
+{
+return true;
+}
   return false;
 }
+
 public String reverse(String str)
 {
     String sNew = new String();
-    //your code here
-    return sNew;
+
+  for(int i = str.length()-1; i>=0; i--)
+    sNew=sNew+str.charAt(i);
+  return sNew;
 }
-}
+
