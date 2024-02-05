@@ -23,6 +23,7 @@ public void tester()
         e.printStackTrace();
     }
   System.out.println("there are " + lines.length + " lines");
+   String lines[] = {"test","rotator","rewriter","nurses run","Madam, I'm Adam!","A Man! A Plan! A Canal! Panama!"};
   for (int i=0; i < lines.length; i++) 
   {
     if(palindrome(lines[i])==true)
